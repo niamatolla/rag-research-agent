@@ -1,12 +1,14 @@
 # Environment variable
 .env
 *.env
+.venv/
 
 #Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
 
 #Build artifacts
 *.egg-info/
@@ -19,8 +21,9 @@ venv/
 .env/
 
 #Local data
-data/sample_pdfs/
+data/sample_pdfs/*
 data/**/*.pdf
+!data/sample_pdfs/README.md
 
 #Logs and temp
 logs/
@@ -33,3 +36,6 @@ Thumbs.db
 .vscode/
 idea/
 
+.venv
+__pycache__
+.env
