@@ -1,12 +1,14 @@
 # Environment variable
 .env
 *.env
+.venv/
 
 #Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
 
 #Build artifacts
 *.egg-info/
@@ -33,3 +35,6 @@ Thumbs.db
 .vscode/
 idea/
 
+.venv
+__pycache__
+.env
