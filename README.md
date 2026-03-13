@@ -23,6 +23,14 @@ Version 1 prioritizes:
 * Reliable retrieval
 * Grounded responses
 
+
+---
+
+# Architecture Diagram
+
+![RAG Search Agent Diagram](docs/RAG-SEARCH-AGENT-DIAGRAM.png)
+
+
 ---
 
 # Features (v1)
