@@ -26,9 +26,41 @@ Version 1 prioritizes:
 
 ---
 
-# Architecture Diagram
+# RAG pipeline Architecture Diagram
 
 ![RAG Search Agent Diagram](docs/RAG-SEARCH-AGENT-DIAGRAM.png)
+
+### Document Processing Pipeline
+
+1. **PDF ingestion**
+   - Source documents stored in `data/sample_pdfs`
+
+2. **Text extraction**
+   - `pdf_reader.py` extracts raw text from PDFs
+
+3. **Semantic chunking**
+   - `chunker.py` splits text into semantically meaningful chunks
+
+4. **Embedding generation**
+   - `ingest.py` generates embeddings using Azure OpenAI
+
+5. **Vector indexing**
+   - Chunks + embeddings stored in **Azure AI Search**
+
+---
+
+### Question Answering Pipeline
+
+1. **User query**
+2. **Vector search retrieval**
+   - `search.py` retrieves relevant document chunks
+3. **Prompt construction**
+   - `answer.py` builds a grounded prompt with retrieved context
+4. **LLM generation**
+   - Azure **GPT-4o** generates the response
+5. **Grounded answer**
+   - Response includes context from retrieved documents
+
 
 
 ---
@@ -50,6 +82,9 @@ Version 1 prioritizes:
 ```
 rag-research-agent/
 
+config/
+    settings.py
+
 ingestion/
     ingest.py
     chunker.py
@@ -60,6 +95,7 @@ retrieval/
 
 llm/
     answer.py
+    openai_client.py
 
 config/
     settings.py
@@ -70,6 +106,12 @@ data/
 main.py
 requirements.txt
 README.md
+
+docs/
+    diagrams
+
+tests/
+    smoke_test.py
 ```
 
 ---
@@ -80,7 +122,7 @@ README.md
 
 * Azure OpenAI
 * Azure AI Search
-* Storage Account (
+* Storage Account 
 
 ---
 
@@ -92,6 +134,7 @@ Create a `.env` file:
 AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_KEY=
 AZURE_SEARCH_ENDPOINT=
+AZURE_OPENAI_API_VERSION
 AZURE_SEARCH_KEY=
 AZURE_SEARCH_INDEX=
 ```
