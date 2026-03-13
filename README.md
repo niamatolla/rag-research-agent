@@ -116,6 +116,24 @@ The system retrieves relevant chunks from the vector index and generates a groun
 
 ---
 
+# Running Tests
+
+Run tests from the project root so imports like `from config.settings import settings` resolve correctly.
+
+```
+python -m tests.smoke_test
+```
+
+or
+
+```
+python -m pytest
+```
+
+Avoid running test files directly (for example: `python tests/smoke_test.py`).
+
+---
+
 # Version Roadmap
 
 ### v1 — Core RAG Pipeline
