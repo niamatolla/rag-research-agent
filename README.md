@@ -6,6 +6,9 @@ This project implements an end-to-end pipeline for ingesting documents, indexing
 
 ---
 
+## Demo Video
+[![Watch the demo](https://img.youtube.com/vi/h-ciobBha74/0.jpg)](https://youtu.be/h-ciobBha74)
+
 ## Key Features
 
 * End-to-end RAG pipeline (ingestion -> retrieval -> generation)
