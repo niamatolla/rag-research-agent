@@ -92,6 +92,9 @@ def test_build_search_documents_preserves_input_data():
 # ---------------------------
 # Case 2 — Error tests
 # ---------------------------
+# --------------------------------------------------
+#  Error test: missing required key `text`
+# --------------------------------------------------
 def test_build_search_documents_raises_error_if_text_missing():
     enriched_chunks = [
         {
@@ -107,9 +110,9 @@ def test_build_search_documents_raises_error_if_text_missing():
     with pytest.raises(ValueError, match="Missing required keys"):
         build_search_documents(enriched_chunks)
 
-# ---------------------------
-# Case 1 — Happy path
-# ---------------------------
+# -------------------------------------------------------
+#  Error test: missing required key `chunk_id`
+# -------------------------------------------------------
 def test_build_search_documents_raises_error_if_chunk_id_missing():
     enriched_chunks = [
         {
@@ -125,9 +128,9 @@ def test_build_search_documents_raises_error_if_chunk_id_missing():
     with pytest.raises(ValueError, match="Missing required keys"):
         build_search_documents(enriched_chunks)
 
-# ---------------------------
-# Case 1 — Happy path
-# ---------------------------
+# ---------------------------------------------------------
+# Error test: missing required key `start_char`
+# ---------------------------------------------------------
 def test_build_search_documents_raises_error_if_start_char_missing():
     enriched_chunks = [
         {
@@ -143,9 +146,9 @@ def test_build_search_documents_raises_error_if_start_char_missing():
     with pytest.raises(ValueError, match="Missing required keys"):
         build_search_documents(enriched_chunks)
 
-# ---------------------------
-# Case 1 — Happy path
-# ---------------------------
+# -------------------------------------------------------
+#  Error test: missing required key `end_char`
+# -------------------------------------------------------
 def test_build_search_documents_raises_error_if_end_char_missing():
     enriched_chunks = [
         {
@@ -161,9 +164,9 @@ def test_build_search_documents_raises_error_if_end_char_missing():
     with pytest.raises(ValueError, match="Missing required keys"):
         build_search_documents(enriched_chunks)
 
-# ---------------------------
-# Case 1 — Happy path
-# ---------------------------
+# ----------------------------------------------------------
+#  Error test: missing required key `page_number`
+# ----------------------------------------------------------
 def test_build_search_documents_raises_error_if_page_number_missing():
     enriched_chunks = [
         {
@@ -179,9 +182,9 @@ def test_build_search_documents_raises_error_if_page_number_missing():
     with pytest.raises(ValueError, match="Missing required keys"):
         build_search_documents(enriched_chunks)
 
-# ---------------------------
-# Case 1 — Happy path
-# ---------------------------
+# ----------------------------------------------------------
+#  Error test: missing required key `document_id`
+# ----------------------------------------------------------
 def test_build_search_documents_raises_error_if_document_id_missing():
     enriched_chunks = [
         {
@@ -198,6 +201,9 @@ def test_build_search_documents_raises_error_if_document_id_missing():
         build_search_documents(enriched_chunks)
 
 
+# -------------------------------------------------------
+# Error test: missing required key `embedding`
+# -------------------------------------------------------
 def test_build_search_documents_raises_error_if_embedding_missing():
     enriched_chunks = [
         {
