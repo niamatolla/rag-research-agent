@@ -66,7 +66,7 @@ def generate_answer(query:str, top_k: int=5) -> dict:
 
     # Handle no context case
     if not retrieved_chunks:
-       return{ ""
+       return{ 
        "answer": "I could not find relevant context to answer this question.",
          "sources": []
        }
